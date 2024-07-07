@@ -1,19 +1,18 @@
 from rest_framework import serializers
-from .models import judul, penulis, harga
+from .models import Book, Author, Order
 
 # buat kelas serializer
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
-        model = judul
-        fields = ["judul", "penulis", "harga"]
+        model = Book
+        fields = '__all__'
 
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = penulis
-        fields = ["nama", "biodata"]
+        model = Author
+        fields = '__all__'
 
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = harga
-        fields = ["buku", "jumlah", "total"]
-        
+        model = Order
+        fields = '__all__'
